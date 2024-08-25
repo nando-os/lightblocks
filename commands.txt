@@ -1,0 +1,25 @@
+addItem Carlo Preziosi
+addItem Marc Johnson
+getItem Carlo
+getAllItems
+deleteItem Carlo
+addItem Alice Smith
+addItem Bob Johnson
+addItem Charlie Brown
+getItem Alice
+deleteItem Bob
+getAllItems
+addItem David Wilson
+addItem Emma Davis
+getItem Charlie
+deleteItem Alice
+addItem Frank Miller
+addItem Grace Lee
+getAllItems
+addItem Hannah Clark
+getItem Emma tompson
+deleteItem Charlie
+addItem Ian Walker
+addItem Jane Hall
+getAllItems
+deleteItem Frank Bernard

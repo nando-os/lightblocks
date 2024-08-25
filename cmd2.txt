@@ -1,0 +1,7 @@
+addItem Carlo Preziosi
+addItem Marc Johnson
+addItem Grace Lee
+addItem Alice Smith
+getAllItems
+deleteItem Marc
+getAllItems
