@@ -1,0 +1,36 @@
+version: '3.1'
+
+networks:
+  rabbitmq-example:
+    driver: bridge
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.12.12-management-alpine
+    container_name: 'rabbitmq'
+    networks:
+      - rabbitmq-example
+    ports:
+      - 5672:5672
+      - 15672:15672
+   # volumes:
+   #   - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+   #   - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    command: bash -c "rabbitmq-plugins enable --offline rabbitmq_tracing && rabbitmq-server"
+
+
+# generate from build
+  app:
+    build: .
+    container_name: 'app'
+    networks:
+      - rabbitmq-example
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USER=guest
+      - RABBITMQ_PASS=guest
+    volumes:
+      - ./OUTPUT:/OUTPUT
